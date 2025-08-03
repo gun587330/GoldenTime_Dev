@@ -2,7 +2,7 @@ import React from 'react'
 
 const Like = () => {
   return (
-    <div>Like</div>
+    <div>찜 페이지</div>
   )
 }
 
