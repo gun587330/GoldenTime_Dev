@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { STORES_DATA } from '../apis/mock/mockShopList';
 
 /**  전역 상태 관리 스토어(Zustand) **/
 
@@ -28,75 +29,8 @@ const useStore = create((set, get) => ({
   sortOption: 'discount',
   
   // ===== 가게 데이터 상태 관리 ===== //
-  /* 임시 가게 목록 데이터 (DB에서 받아올 예정) */
-  stores: [
-    {
-      id: 1,
-      name: "우리동네 치킨집",
-      menu: "후라이드 치킨, 양념치킨",
-      distance: 150,
-      walkTime: 3,
-      originalPrice: 18000,
-      discountPrice: 15000,
-      discountRate: 17,
-      isLiked: false
-    },
-    {
-      id: 2,
-      name: "맛있는 피자집",
-      menu: "페퍼로니 피자, 치즈 피자",
-      distance: 200,
-      walkTime: 4,
-      originalPrice: 25000,
-      discountPrice: 20000,
-      discountRate: 20,
-      isLiked: true
-    },
-    {
-      id: 3,
-      name: "신선한 샐러드",
-      menu: "닭가슴살 샐러드, 연어 샐러드",
-      distance: 100,
-      walkTime: 2,
-      originalPrice: 12000,
-      discountPrice: 9000,
-      discountRate: 25,
-      isLiked: false
-    },
-    {
-      id: 4,
-      name: "고급 스테이크하우스",
-      menu: "립 스테이크, 등심 스테이크",
-      distance: 300,
-      walkTime: 6,
-      originalPrice: 45000,
-      discountPrice: 35000,
-      discountRate: 22,
-      isLiked: false
-    },
-    {
-      id: 5,
-      name: "전통 한식당",
-      menu: "불고기, 갈비찜",
-      distance: 180,
-      walkTime: 4,
-      originalPrice: 15000,
-      discountPrice: 12000,
-      discountRate: 20,
-      isLiked: true
-    },
-    {
-      id: 6,
-      name: "신메뉴 카페",
-      menu: "아메리카노, 라떼",
-      distance: 120,
-      walkTime: 2,
-      originalPrice: 8000,
-      discountPrice: 6000,
-      discountRate: 25,
-      isLiked: false
-    }
-  ],
+  /* mockShopList.js에서 가져온 가게 목록 데이터 */
+  stores: STORES_DATA,
 
   // ===== 액션 함수들 =====
   
