@@ -1,108 +1,140 @@
-/**
- * Login.jsx
- * 구글 간편로그인 페이지 컴포넌트
- */
-import styled from "styled-components";
-import { GoogleLogin } from "@react-oauth/google";
-import { useNavigate } from "react-router-dom";
-import useStore from "../store/useStore";
+import React from 'react';
+import { ReactComponent as Logo } from '../assets/images/logo.svg';
+import { ReactComponent as Bubble } from '../assets/images/bubble.svg';
+import Google from '../components/login/Google';
+import styled from 'styled-components';
 
 const Login = () => {
-  const navigate = useNavigate();
-  const { setUser, setCurrentPage } = useStore();
-
-  const handleGoogleSuccess = async (credentialResponse) => {
-    try {
-      // Google OAuth 토큰을 서버로 전송하여 사용자 정보를 받아옴
-      const response = await fetch('/api/auth/google', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          credential: credentialResponse.credential,
-        }),
-      });
-
-      if (response.ok) {
-        const userData = await response.json();
-        setUser(userData);
-        setCurrentPage('address');
-        navigate('/address');
-      } else {
-        console.error('Google login failed');
-      }
-    } catch (error) {
-      console.error('Google login error:', error);
-    }
-  };
-
-  const handleGoogleError = () => {
-    console.error('Google login failed');
-  };
-
   return (
-    <LoginContainer>
-      <LoginCard>
-        <Logo>동작마을방범대</Logo>
-        <Subtitle>안전한 동네 정보를 확인하세요</Subtitle>
-        
-        <GoogleLoginWrapper>
-          <GoogleLogin
-            onSuccess={handleGoogleSuccess}
-            onError={handleGoogleError}
-            useOneTap
-            theme="filled_blue"
-            size="large"
-            text="signin_with"
-            shape="rectangular"
-          />
-        </GoogleLoginWrapper>
-      </LoginCard>
-    </LoginContainer>
-  );
-};
+    <LoginWrapper>
+      <Container>
+        <Logo className='logo-icon' />
 
-// ===== Styled Components =====
+        <FirstTitle>
+          <p className='main-title'>위기의 지갑을 구하는 3시간의 기적</p>
+        </FirstTitle>
 
-const LoginContainer = styled.div`
+        <SecondTitle>
+          <p className='sub-title'>
+            우리 동네 할인 정보
+            <br />
+            놓치지 마세요
+          </p>
+        </SecondTitle>
+
+        <BubbleBox>
+          <Bubble className='bubble-svg' />
+          <div className='bubble-text'>3초만에 간편 로그인</div>
+        </BubbleBox>
+
+        <GoogleButton>
+          <Google className='google-component' />
+        </GoogleButton>
+      </Container>
+    </LoginWrapper>
+  )
+}
+
+export default Login
+
+const LoginWrapper = styled.div`
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+`
+
+const Container = styled.div`
+  position: relative;
+  background-color: #ffffff;
+  width: 360px;
+  height: 720px;
+
+  .logo-icon {
+    position: absolute;
+    height: 104px;
+    width: 104px;
+    top: 188px;
+    left: 128px;
+  }
+`
+
+const FirstTitle = styled.div`
+  position: absolute;
+  top: 316px;
+  left: 43px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  .main-title {
+    color: #282828;
+    font-family: "Pretendard-Bold", Helvetica;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 14px;
+    white-space: nowrap;
+    margin-top: -1px;
+  }
+`
+
+const SecondTitle = styled.div`
+  position: absolute;
+  top: 354px;
+  left: 118.5px;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 20px;
-`;
 
-const LoginCard = styled.div`
-  background: #fff;
-  border-radius: 20px;
-  padding: 40px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  max-width: 400px;
-  width: 100%;
-`;
+  .sub-title {
+    color: #000000;
+    font-family: "Pretendard-Medium", Helvetica;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: center;
+    white-space: nowrap;
+    margin-top: -1px;
+  }
+`
 
-const Logo = styled.h1`
-  font-size: 28px;
-  font-weight: 700;
-  color: #333;
-  margin-bottom: 10px;
-  font-family: Pretendard, sans-serif;
-`;
-
-const Subtitle = styled.p`
-  font-size: 16px;
-  color: #666;
-  margin-bottom: 40px;
-  font-family: Pretendard, sans-serif;
-`;
-
-const GoogleLoginWrapper = styled.div`
+const BubbleBox = styled.div`
+  position: relative;
+  top: 480px;
   display: flex;
   justify-content: center;
-  margin-top: 20px;
-`;
+  align-items: center;
 
-export default Login;
+  .bubble-svg {
+    position: relative;
+    width: 200px;
+    height: 50px;
+    top: 0;
+    left: 0;
+  }
+
+  .bubble-text {
+    position: absolute;
+    top: 9px;
+    color: #da2538;
+    font-family: "Pretendard-Medium", Helvetica;
+    font-size: 16px;
+    font-weight: 600;
+    white-space: nowrap;
+    z-index: 1;
+  }
+`
+
+const GoogleButton = styled.div`
+  position: absolute;
+  top: 538px;
+  left: 32px;
+  width: 296px;
+  cursor: pointer;
+
+  .google-component {
+    left: 26px;
+  }
+`
