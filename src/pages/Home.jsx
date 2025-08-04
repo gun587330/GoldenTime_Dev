@@ -131,7 +131,7 @@ const AddressBar = styled.div`
   z-index: 20;
   display: flex;
   align-items: center;
-  padding: clamp(16px, 4vh, 32px) 0 0 0;
+  padding: clamp(16px, 4vh, 32px) 0 0 0; // 360x720에 맞는 규격..
   gap: 6px;
   justify-content: space-between;
   background: #fff;
