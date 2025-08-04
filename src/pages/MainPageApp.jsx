@@ -5,7 +5,6 @@
  * 현재 페이지에 따라 컴포넌트 렌더링
  */
 import React, { useEffect } from 'react';
-import { Navigate } from 'react-router-dom';
 import Home from './Home';
 import Like from './Like';
 import Schedule from './Schedule';
