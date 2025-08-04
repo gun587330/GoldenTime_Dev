@@ -159,7 +159,7 @@ const AddressText = styled.div`
 
 /* 배너 광고 영역(주소바 아래에 위치) */
 const BannerWrapper = styled.div`
-  margin: clamp(8px, 2vh, 16px) 0;
+  margin: clamp(8px, 2vh, 16px) 0 0 0;
   border-radius: clamp(8px, 2vw, 10px);
   flex-shrink: 0;
   overflow: hidden;
@@ -203,9 +203,10 @@ const BannerSub = styled.div`
 const FilterRow = styled.div`
   position: -webkit-sticky;
   position: sticky;
-  top: clamp(40px, 10vh, 3.65rem);
+  top: clamp(40px, 10vh, 3.4rem); // 약간의 편법
   z-index: 15;
   margin: 0px 0px clamp(8px, 2vh, 16px) 0px;
+  padding-top: clamp(8px, 2vh, 16px); // 약간의 편법
   display: flex;
   align-items: center;
   gap: clamp(6px, 2vw, 10px);
