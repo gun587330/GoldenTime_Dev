@@ -203,7 +203,7 @@ const BannerSub = styled.div`
 const FilterRow = styled.div`
   position: -webkit-sticky;
   position: sticky;
-  top: clamp(40px, 10vh, 3.4rem); // 약간의 편법
+  top: clamp(40px, 10vh, 2.8rem); // 약간의 편법
   z-index: 15;
   margin: 0px 0px clamp(8px, 2vh, 16px) 0px;
   padding-top: clamp(8px, 2vh, 16px); // 약간의 편법
