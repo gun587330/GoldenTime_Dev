@@ -2,13 +2,13 @@ import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDwg50EEYXYhsqeW42BcQOBOAlFQK1_LYU",
-  authDomain: "dongjak-village-guards.firebaseapp.com",
-  projectId: "dongjak-village-guards",
-  storageBucket: "dongjak-village-guards.firebasestorage.app",
-  messagingSenderId: "900539435014",
-  appId: "1:900539435014:web:4495d55080dd31e4c5db87",
-  measurementId: "G-RSM60L1NCX"
+  apiKey: "AIzaSyBzH_vPmRMjk8oQr97UGnkpBsQw0C7nW8k",
+  authDomain: "goldentime-8c265.firebaseapp.com",
+  projectId: "goldentime-8c265",
+  storageBucket: "goldentime-8c265.firebasestorage.app",
+  messagingSenderId: "901513479691",
+  appId: "1:901513479691:web:a9388369b15c3b6315290e",
+  measurementId: "G-XBYZMSSC1Q"
 };
 
 const app = initializeApp(firebaseConfig);
