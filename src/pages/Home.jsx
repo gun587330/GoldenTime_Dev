@@ -148,7 +148,7 @@ const AddressText = styled.div`
   color: var(--, #000);
   text-overflow: ellipsis;
   font-family: Pretendard;
-  font-size: clamp(18px, 5vw, 22px);
+  font-size: clamp(16px, 5vw, 22px); // iOS 폰트 자동 확대 방지 수정
   font-style: normal;
   font-weight: 700;
   line-height: normal;
