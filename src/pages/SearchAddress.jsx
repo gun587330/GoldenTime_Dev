@@ -28,6 +28,7 @@ const AddressWrapper = styled.div`
   flex-direction: row;
   justify-content: center;
   width: 100%;
+  height: 100%; // Layout에 맞출려고 수정
 `
 
 const AddressContainer = styled.div`
