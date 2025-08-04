@@ -8,9 +8,9 @@ import './App.css';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
-import Login from './pages/Login';
-import AddressRegistration from './pages/AddressRegistration';
 import Like from './pages/Like';
+import Schedule from './pages/Schedule';
+import MyPage from './pages/MyPage';
 import Layout from './components/Layout';
 import useStore from './store/useStore';
 
@@ -29,9 +29,9 @@ function App() {
       case "favorites":
         return <Like />; // 나중에 Favorites 컴포넌트로 교체
       case "history":
-        return <div>일정 페이지</div>; // 나중에 History 컴포넌트로 교체
+        return <Schedule />; // 나중에 History 컴포넌트로 교체
       case "mypage":
-        return <div>MY 페이지</div>; // 나중에 MyPage 컴포넌트로 교체
+        return <MyPage />;
       default:
         return <Home />;
     }

@@ -2,7 +2,6 @@
  * Login.jsx
  * 구글 간편로그인 페이지 컴포넌트
  */
-import React from "react";
 import styled from "styled-components";
 import { GoogleLogin } from "@react-oauth/google";
 import { useNavigate } from "react-router-dom";
