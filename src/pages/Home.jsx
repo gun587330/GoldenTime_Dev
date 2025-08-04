@@ -140,6 +140,8 @@ const AddressBar = styled.div`
   /* sticky 포지션이 확실히 작동하도록 추가 설정 */
   transform: translateZ(0);
   will-change: transform;
+
+  touch-action: manipulation; // 모바일에서 주소바 클릭 시 자동 줌 방지 테스트
 `;
 
 /* 주소 텍스트 */
@@ -148,7 +150,7 @@ const AddressText = styled.div`
   color: var(--, #000);
   text-overflow: ellipsis;
   font-family: Pretendard;
-  font-size: clamp(16px, 5vw, 22px); // iOS 폰트 자동 확대 방지 수정
+  // font-size: clamp(16px, 5vw, 22px); // iOS 폰트 자동 확대 방지 수정 -> 해결 안 됨
   font-style: normal;
   font-weight: 700;
   line-height: normal;
