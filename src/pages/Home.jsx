@@ -203,7 +203,7 @@ const BannerSub = styled.div`
 const FilterRow = styled.div`
   position: -webkit-sticky;
   position: sticky;
-  top: clamp(40px, 10vh, 56.9px);
+  top: clamp(40px, 10vh, 3.65rem);
   z-index: 15;
   margin: 0px 0px clamp(8px, 2vh, 16px) 0px;
   display: flex;
