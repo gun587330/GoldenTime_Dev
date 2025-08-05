@@ -78,6 +78,7 @@ const Search = () => {
 
 export default Search
 
+// ===== Styled Components ===== //
 const SearchWrapper = styled.div`
   width: 100%;
   display: flex;

@@ -13,6 +13,7 @@ const AddressBar = ({ address, onAddressClick }) => {
   );
 };
 
+// ===== Styled Components ===== //
 const AddressContainer = styled.div`
   display: flex;
   align-items: center;
