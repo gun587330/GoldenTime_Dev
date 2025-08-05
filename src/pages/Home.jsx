@@ -131,7 +131,7 @@ const AddressBar = styled.div`
   z-index: 20;
   display: flex;
   align-items: center;
-  padding: clamp(16px, 4vh, 32px) 0 0 0; // 360x720에 맞는 규격..
+  padding: clamp(16px, 4vh, 32px) 0 clamp(8px, 2vh, 16px) 0; // 주소바 하단 padding 변경요구 반영
   gap: 6px;
   justify-content: space-between;
   background: #fff;
@@ -142,6 +142,7 @@ const AddressBar = styled.div`
   will-change: transform;
 
   touch-action: manipulation; // 모바일에서 주소바 클릭 시 자동 줌 방지 테스트 -> 해결 안 됨
+  border: 1px solid red;
 `;
 
 /* 주소 텍스트 */
@@ -161,7 +162,7 @@ const AddressText = styled.div`
 
 /* 배너 광고 영역(주소바 아래에 위치) */
 const BannerWrapper = styled.div`
-  margin: clamp(8px, 2vh, 16px) 0 0 0;
+//  margin: clamp(8px, 2vh, 16px) 0 0 0;
   border-radius: clamp(8px, 2vw, 10px);
   flex-shrink: 0;
   overflow: hidden;
@@ -205,9 +206,9 @@ const BannerSub = styled.div`
 const FilterRow = styled.div`
   position: -webkit-sticky;
   position: sticky;
-  top: clamp(40px, 10vh, 2.8rem); // 약간의 편법
+  top: clamp(40px, 10vh, 4rem); // 약간의 편법
   z-index: 15;
-  //  margin: 0px 0px clamp(8px, 2vh, 16px) 0px;
+  //  margin: 0px 0px clamp(8px, 2vh, 16px) 0px; // 필터바 padding 변경요구 반영
   padding: clamp(8px, 2vh, 16px) 0; // 약간의 편법
   border: 1px solid red;
 
