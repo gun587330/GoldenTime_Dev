@@ -36,7 +36,6 @@ const CardImageContainer = styled.div`
   /* 반응형 웹 수정: 고정 높이 대신 반응형 높이 사용 */
   height: clamp(120px, 35vh, 148px);
   flex-shrink: 0;
-  border: 1px solid blue;
 `;
 
 /* 이미지 그룹 컨테이너
@@ -56,8 +55,6 @@ const ImageGroup = styled.div`
 
   width: 100%;
   height: 100%;
-
-  border: 1px solid red;
 `;
 
 /* 메인 카드 이미지

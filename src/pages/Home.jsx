@@ -142,7 +142,6 @@ const AddressBar = styled.div`
   will-change: transform;
 
   touch-action: manipulation; // 모바일에서 주소바 클릭 시 자동 줌 방지 테스트 -> 해결 안 됨
-  border: 1px solid red;
 `;
 
 /* 주소 텍스트 */
@@ -210,7 +209,6 @@ const FilterRow = styled.div`
   z-index: 15;
   //  margin: 0px 0px clamp(8px, 2vh, 16px) 0px; // 필터바 padding 변경요구 반영
   padding: clamp(8px, 2vh, 16px) 0; // 약간의 편법
-  border: 1px solid red;
 
   display: flex;
   align-items: center;
