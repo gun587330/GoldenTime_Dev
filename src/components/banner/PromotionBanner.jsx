@@ -13,6 +13,7 @@ const PromotionBanner = ({ banner }) => {
   );
 };
 
+// ===== Styled Components ===== //
 const BannerWrapper = styled.div`
   margin: 12px 20px 0 20px;
   border-radius: 10px;
