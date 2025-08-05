@@ -141,7 +141,7 @@ const AddressBar = styled.div`
   transform: translateZ(0);
   will-change: transform;
 
-  touch-action: manipulation; // 모바일에서 주소바 클릭 시 자동 줌 방지 테스트
+  touch-action: manipulation; // 모바일에서 주소바 클릭 시 자동 줌 방지 테스트 -> 해결 안 됨
 `;
 
 /* 주소 텍스트 */
@@ -207,8 +207,10 @@ const FilterRow = styled.div`
   position: sticky;
   top: clamp(40px, 10vh, 2.8rem); // 약간의 편법
   z-index: 15;
-  margin: 0px 0px clamp(8px, 2vh, 16px) 0px;
-  padding-top: clamp(8px, 2vh, 16px); // 약간의 편법
+  //  margin: 0px 0px clamp(8px, 2vh, 16px) 0px;
+  padding: clamp(8px, 2vh, 16px) 0; // 약간의 편법
+  border: 1px solid red;
+
   display: flex;
   align-items: center;
   gap: clamp(6px, 2vw, 10px);

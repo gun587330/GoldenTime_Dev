@@ -36,6 +36,7 @@ const CardImageContainer = styled.div`
   /* 반응형 웹 수정: 고정 높이 대신 반응형 높이 사용 */
   height: clamp(120px, 35vh, 148px);
   flex-shrink: 0;
+  border: 1px solid blue;
 `;
 
 /* 이미지 그룹 컨테이너
@@ -46,12 +47,17 @@ const ImageGroup = styled.div`
   justify-content: flex-start;
   gap: 8px;
   /* 반응형 웹 수정: 전체 이미지 그룹의 최대 너비 제한 */
-  max-width: clamp(230px, 75vw, 320px);
+//  max-width: clamp(230px, 75vw, 320px);
   
   /* 반응형 웹 수정: 모바일에서 간격 조정 */
-  @media (max-width: 480px) {
-    gap: clamp(6px, 2vw, 8px);
-  }
+//  @media (max-width: 480px) {
+//    gap: clamp(6px, 2vw, 8px);
+//  }
+
+  width: 100%;
+  height: 100%;
+
+  border: 1px solid red;
 `;
 
 /* 메인 카드 이미지
@@ -69,7 +75,9 @@ const MainCardImage = styled.img`
 (썸네일용 크기의 이미지) */
 const CardImage = styled.img`
   /* 반응형 웹 수정: 고정 크기 대신 반응형 크기 사용 */
-  width: clamp(50px, 15vw, 72px);
+    width: clamp(50px, 15vw, 72px);
+//  width: 100%;
+//  height: 100%;
   height: clamp(50px, 15vw, 72px);
   object-fit: cover;
   flex-shrink: 0;
