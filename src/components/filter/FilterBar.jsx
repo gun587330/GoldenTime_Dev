@@ -27,11 +27,40 @@ const FilterBar = ({ activeFilter, onFilterChange, sortOptions, onSortChange }) 
   );
 };
 
+
+//const FilterRow = styled.div`
+//  margin: 16px 12px 6px 12px;
+//  display: flex;
+//  align-items: center;
+//  gap: 10px;
+//`;
+
+// 임시 반응형 테스트 코드
 const FilterRow = styled.div`
-  margin: 16px 12px 6px 12px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 15;
+  margin: 0px 0px clamp(8px, 2vh, 16px) 0px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: clamp(6px, 2vw, 10px);
+  background: #fff;
+  transition: all 0.3s ease;
+  width: 100%;
+  
+  /* 데스크톱에서는 주소바 높이만큼 top 값 조정 */
+  @media (min-width: 769px) {
+    top: 60px; /* 주소바 높이에 맞춰 조정 */
+  }
+  
+  /* 모바일에서는 바로 붙도록 */
+  @media (max-width: 768px) {
+    top: 0;
+  }
+  
+  transform: translateZ(0);
+  will-change: transform;
 `;
 
 const FilterTab = styled.button`
