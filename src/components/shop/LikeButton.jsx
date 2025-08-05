@@ -4,7 +4,7 @@
  */
 import styled from "styled-components";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
-import useStore from "../../store/useStore";
+import useStore from "../../hooks/store/useStore";
 
 /**
  * LikeButton 컴포넌트
