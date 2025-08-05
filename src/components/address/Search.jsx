@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import { ReactComponent as SearchIcon } from '../../assets/images/search.svg';
 import { fetchAddressResults } from '../../apis/addressAPI';
 import Spinner from '../common/Spinner';
+import useUserInfo from '../../hooks/user/useUserInfo';
+import useStore from '../../hooks/store/useStore';
 
 const Search = () => {
   const [keyword, setKeyword] = useState('');
@@ -10,10 +12,14 @@ const Search = () => {
   const [results, setResults] = useState([]);
   const [error, setError] = useState('');
   const [hasSearched, setHasSearched] = useState(false);
+  
+  const { setUserAddress } = useUserInfo();
+  const { setCurrentPage } = useStore();
 
   const handleSearch = async () => {
     if (!keyword.trim()) return;
 
+    console.log('주소 검색 시작:', keyword); // 디버깅 로그 추가
     setHasSearched(true);
     setLoading(true);
     setError('');
@@ -21,13 +27,26 @@ const Search = () => {
 
     try {
       const res = await fetchAddressResults(keyword);
+      console.log('주소 검색 결과:', res); // 디버깅 로그 추가
       setResults(res);
     } catch (err) {
+      console.error('주소 검색 오류:', err); // 디버깅 로그 추가
       setError(err.message);
       setResults([]);
     } finally {
       setLoading(false);
     }
+  };
+
+  /** 주소 상태 저장&관리를 위한 handle함수 추가
+   * 초기 주소검색 페이지에서 받은 주소 메인페이지 상단에 표시
+   * 추후 백DB 생기면 관리 
+   */
+  const handleAddressSelect = (address) => {
+    // 주소 정보 저장
+    setUserAddress(address);
+    // 메인 페이지로 이동
+    setCurrentPage("home");
   };
 
   return (
@@ -48,7 +67,7 @@ const Search = () => {
 
       <ResultContainer>
         {results.map((item, index) => (
-          <ResultItem key={index}>
+          <ResultItem key={index} onClick={() => handleAddressSelect(item)}>
             {item.roadAddr} ({item.zipNo})
           </ResultItem>
         ))}
