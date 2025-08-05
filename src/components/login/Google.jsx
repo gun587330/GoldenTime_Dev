@@ -2,7 +2,8 @@ import { signInWithPopup } from 'firebase/auth';
 import React from 'react'
 import styled from 'styled-components';
 import { auth, provider } from '../../firebase';
-import { useNavigate } from 'react-router-dom';
+import useUserInfo from '../../hooks/user/useUserInfo';
+import useStore from '../../hooks/store/useStore';
 
 const Google = ({
   className,
@@ -10,13 +11,22 @@ const Google = ({
   googleLogo = "https://www.gstatic.com/marketing-cms/assets/images/d5/dc/cfe9ce8b4425b410b49b7f2dd3f3/g.webp=s96-fcrop64=1,00000000ffffffff-rw",
   text = "Sign In with Google",
 }) => {
-  const navigate = useNavigate();
+  const { setAuthUser } = useUserInfo();
+  const { setCurrentPage } = useStore();
 
+  /** handleLogin
+   *  사용자 정보 상태 저장을 위한 setAuthUser 정보 추가
+   */
   const handleLogin = async () => {
     try {
       const result = await signInWithPopup(auth, provider)
       console.log("로그인 성공:", result.user);
-      navigate('/search-address');
+      
+      // 사용자 정보 저장
+      setAuthUser(result.user);
+      
+      // 주소 검색 페이지로 이동
+      setCurrentPage("search-address");
     } catch (error) {
       console.error("로그인 실패:", error.code, error.message);
     }
@@ -34,6 +44,7 @@ const Google = ({
 
 export default Google
 
+// ===== Styled Components ===== //
 const SignInwithGoogle = styled.div`
   background-color: #ffffff;
   border-radius: 10px;
