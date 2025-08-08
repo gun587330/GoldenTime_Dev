@@ -1,4 +1,3 @@
-// Layout.jsx
 import { forwardRef } from "react";
 import styled from 'styled-components';
 import NavBar from '../nav/NavBar';
@@ -20,6 +19,8 @@ const Layout = forwardRef(({ children, currentPage = "home", onPageChange }, con
 });
 
 export default Layout;
+
+// ===== Styled Components ===== //
 
 // 전체 Layout: 반응형으로 수정
 const Container = styled.div`

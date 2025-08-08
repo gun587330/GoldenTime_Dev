@@ -71,8 +71,8 @@ const CardContainer = styled.div`
 
 const CardHeader = styled.div`
     width: 100%;
-
 `;
+
 const CardFooter = styled.div`
     width: 100%;
     height: 100% - 148px;

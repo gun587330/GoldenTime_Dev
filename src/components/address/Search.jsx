@@ -38,6 +38,10 @@ const Search = () => {
     }
   };
 
+  /** 주소 상태 저장&관리를 위한 추가
+   * 초기 주소검색 페이지에서 받은 주소 메인페이지 상단에 표시
+   * 추후 백DB 생기면 관리 
+   */
   const handleAddressSelect = (address) => {
     // 주소 정보 저장
     setUserAddress(address);
