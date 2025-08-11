@@ -16,7 +16,6 @@ import useStore from "../hooks/store/useStore";
 import useUserInfo from "../hooks/user/useUserInfo";
 import Card from "../components/shop/Card";
 import bannerImage from "../assets/images/bannerImage.png";
-import { type } from "@testing-library/user-event/dist/type";
 
 export default function HomePage() {
   /* 토글 상태 관리 */
