@@ -38,7 +38,9 @@ const Search = () => {
     }
   };
 
-  /** 주소 상태 저장&관리를 위한 추가
+
+
+  /** 주소 상태 저장&관리를 위한 handle함수 추가
    * 초기 주소검색 페이지에서 받은 주소 메인페이지 상단에 표시
    * 추후 백DB 생기면 관리 
    */
@@ -77,6 +79,8 @@ const Search = () => {
 }
 
 export default Search
+
+// ===== Styled Components ===== //
 
 const SearchWrapper = styled.div`
   width: 100%;

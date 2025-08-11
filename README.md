@@ -1,4 +1,5 @@
-# Golden Time
+# 지금 SALE?[지금 살래?]
+
 
 동작구 소상공인의 유휴 시간과 자원을 소비자에게 연결하는 AI 기반 타임커머스 플랫폼
 
@@ -14,66 +15,7 @@ Golden Time은 동작구 지역 소상공인의 빈 시간과 남은 재고를 �
 - 간편 예약 및 결제
 - 소상공인·소비자 맞춤형 추천
 
-## Tech Stack
-
-- **Frontend**: React, Zustand, Styled Components
-- **Backend**: Node.js, Express
-- **Database**: MongoDB
-- **AI/ML**: Python, TensorFlow
-- **Cloud**: AWS
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js (v16 이상)
-- npm 또는 yarn
-
-### Installation
-
-```bash
-# 저장소 클론
-git clone https://github.com/your-username/golden-time.git
-
-# 프로젝트 디렉토리로 이동
-cd golden-time
-
-# 의존성 설치
-npm install
-```
-
-### Development
-
-```bash
-# 개발 서버 실행
-npm start
-
-# 브라우저에서 확인
-http://localhost:3000
-```
-
-### Build
-
-```bash
-# 프로덕션 빌드
-npm run build
-```
-
-## Project Structure
-
-```
-src/
-├── components/     # 재사용 가능한 컴포넌트
-├── pages/         # 페이지 컴포넌트
-├── store/         # Zustand 상태 관리
-├── assets/        # 이미지, 폰트 등 정적 자원
-└── utils/         # 유틸리티 함수
-```
-
-## Team
-
-**동작마을방범대** - 동작구 지역 소상공인의 든든한 파트너
-
-## License
-
-MIT License
+- 테스또
+- 테스또2
+- 테스또3
+- 테스또4

@@ -35,7 +35,7 @@ const Card = ({ store }) => {
 };
 export default Card;
 
-// ===== Styled Components =====
+// ===== Styled Components ===== //
 
 /**
  * 카드 컨테이너
@@ -70,7 +70,7 @@ const CardContainer = styled.div`
 `;
 
 const CardHeader = styled.div`
-    width: 100%;
+  width: 100%;
 `;
 
 const CardFooter = styled.div`
@@ -82,6 +82,7 @@ const CardFooter = styled.div`
     align-items: center;
     /* 반응형 웹 수정: 반응형 패딩 사용 */
     padding: 0px clamp(12px, 4vw, 16.5px) 0px clamp(12px, 4vw, 16.5px);
+    margin-bttom: 6px;
 
     // 레이아웃 확인용
     //border: 1px solid blue;

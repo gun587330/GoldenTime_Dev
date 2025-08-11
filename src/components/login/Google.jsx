@@ -14,6 +14,9 @@ const Google = ({
   const { setAuthUser } = useUserInfo();
   const { setCurrentPage } = useStore();
 
+  /** handleLogin
+   *  사용자 정보 상태 저장을 위한 setAuthUser 정보 추가
+   */
   const handleLogin = async () => {
     try {
       const result = await signInWithPopup(auth, provider)
@@ -40,6 +43,8 @@ const Google = ({
 }
 
 export default Google
+
+// ===== Styled Components ===== //
 
 const SignInwithGoogle = styled.div`
   background-color: #ffffff;

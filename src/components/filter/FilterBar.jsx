@@ -16,6 +16,7 @@ const FilterBar = ({ activeFilter, onFilterChange, sortOptions, onSortChange }) 
       >
         업종
       </FilterTab>
+
       <FilterSelect onChange={(e) => onSortChange(e.target.value)}>
         {sortOptions.map((option, index) => (
           <option key={index} value={option.value}>
@@ -63,12 +64,15 @@ const FilterRow = styled.div`
 `;
 
 const FilterTab = styled.button`
+//  width: 74px;
+//  height: 36px;
   padding: 5px 18px;
-  border-radius: 16px;
+  border-radius: 20px;
   border: 1px solid #DA2538;
   background: ${props => props.active ? "#DA2538" : "#fff"};
   color: ${props => props.active ? "#fff" : "#DA2538"};
   font-size: 15px;
+  font-size: 30px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;

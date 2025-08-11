@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const TimeToggle = ({ label, active, onClick }) => {
+const CategoryToggle = ({ label = '업종', active, onClick }) => {
   return (
     <Button type="button" onClick={onClick} $active={active} aria-pressed={!!active}>
       <span>{label}</span>
@@ -9,10 +9,11 @@ const TimeToggle = ({ label, active, onClick }) => {
   );
 };
 
-export default TimeToggle;
+export default CategoryToggle;
 
 const Button = styled.button`
-  width: clamp(60px, 20vw, 72px);
+  min-width: clamp(60px, 20vw, 72px);
+  width: auto;
   height: clamp(30px, 7vh, 36px);
   border-radius: clamp(12px, 3vw, 16px);
   border: 1px solid ${props => props.$active ? '#DA2538' : '#CCC'};
@@ -26,11 +27,12 @@ const Button = styled.button`
   align-items: center;
   justify-content: center;
   gap: clamp(4px, 2vw, 8px);
-  padding: 0 clamp(4px, 2vw, 8px);
+  padding: 0 clamp(8px, 3vw, 12px);
+  white-space: nowrap;
   
-//  &:hover { background: #f8f8f8; }
   &:hover { 
     border: 1px solid #DA2538;
     color: #DA2538;
   }
 `;
+
